@@ -105,10 +105,11 @@ class _CountDownState extends State<CountdownTimer> {
       '$value${_padZero(time.hours)} : ${_padZero(time.min)} : ${_padZero(time.sec)}',
       style: TextStyle(
          fontSize: 32,
-        color:time.min!>30?Colors.black:(time.min!<29 && time.min!>10)?Colors.blue:time.min!<10?Colors.yellow:Colors.black
+        color:time.min!>30?Colors.black:(time.min!<29 && time.min!>10)?Colors.blue:Colors.yellow
       ),
     );
   }
+ 
 
   String _padZero(int? number) => (number ?? 0).toString().padLeft(2, '0');
 }
