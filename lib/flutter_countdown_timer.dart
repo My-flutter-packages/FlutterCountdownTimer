@@ -85,6 +85,7 @@ class _CountDownState extends State<CountdownTimer> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     return widgetBuilder(context, currentRemainingTime);
@@ -105,11 +106,12 @@ class _CountDownState extends State<CountdownTimer> {
       '$value${_padZero(time.hours)} : ${_padZero(time.min)} : ${_padZero(time.sec)}',
       style: TextStyle(
          fontSize: 32,
-        color:time.min!>30?Colors.black:(time.min!<29 && time.min!>10)?Colors.blue:Colors.yellow
+        color:time.min!>30?Colors.black:(time.min!<30 && time.min!>=10)?Colors.blue:time.min!<=9?Colors.yellow:Colors.black
       ),
     );
   }
  
+
 
   String _padZero(int? number) => (number ?? 0).toString().padLeft(2, '0');
 }
