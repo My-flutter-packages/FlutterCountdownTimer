@@ -103,7 +103,10 @@ class _CountDownState extends State<CountdownTimer> {
 
     return Text(
       '$value${_padZero(time.hours)} : ${_padZero(time.min)} : ${_padZero(time.sec)}',
-      style: textStyle,
+      style: TextStyle(
+         fontSize: 32,
+        color:time.min!>30?Colors.black:time.min!<29?Colors.blue:time.min!<10?Colors.yellow:Colors.black
+      ),
     );
   }
 
