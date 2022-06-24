@@ -84,7 +84,16 @@ class _CountDownState extends State<CountdownTimer> {
       initController();
     }
   }
-
+Color col(int time){
+  if (time>30) {
+    return Colors.black;
+  } else if(time<30 && time>=10) {
+    return Colors.purple;
+  }else if(time<10){
+    return Colors.yellow;
+  }
+  return Colors.black;
+}
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +115,7 @@ class _CountDownState extends State<CountdownTimer> {
       '$value${_padZero(time.hours)} : ${_padZero(time.min)} : ${_padZero(time.sec)}',
       style: TextStyle(
          fontSize: 32,
-        color:time.min!>30?Colors.black:(time.min!<30 && time.min!>=10)?Colors.blue:time.min!<=9?Colors.yellow:Colors.black
+        color:col(time.min!)
       ),
     );
   }
