@@ -88,9 +88,9 @@ Color col(int time){
   if (time>30) {
     return Colors.black;
   } else if(time<30 && time>=10) {
-    return Colors.purple;
+    return Colors.blue;
   }else if(time<10){
-    return Colors.yellow;
+    return Colors.yellow.shade700;
   }
   return Colors.black;
 }
